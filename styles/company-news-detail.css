@@ -1,0 +1,108 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.newsbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    min-height: 38.8rem;
+}
+
+/* News Container Styles */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Set max-width for better readability on large screens */
+    margin: 0 auto; /* Center the container on the page */
+    padding: 5rem; /* Add padding to the container: top, right, bottom, left */
+}
+
+.news-container h1 {
+    font-size: 2rem; /* Increased font size for better readability */
+    color: #003366;
+    text-align: center;
+    margin-bottom: 10px; /* Maintain spacing for better readability */
+}
+
+.news-container h2 {
+    font-size: 1.2rem; /* Adjusted font size for better readability */
+    color: #003366;
+    text-align: center; /* Centered for better alignment */
+    margin-bottom: 10px; /* Maintain spacing */
+}
+
+.news-container p {
+    font-size: 1rem; /* Adjusted font size for better readability */
+    line-height: 1.5;
+    color: #333;
+    text-align: justify; /* Justify text for better reading experience */
+    margin-bottom: 20px; /* Maintain spacing */
+}
+
+.news-container ul {
+    font-size: 1rem; /* Adjusted font size for better readability */
+    color: #555;
+    line-height: 1.5;
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left; /* Align list items to the left */
+}
+
+.news-container img {
+    width: 100%;
+    max-width: 400px; /* Set maximum width for images */
+    margin: 10px auto; /* Center images */
+    display: block;
+}
+
+.call-to-action {
+    font-size: 1rem; /* Adjusted font size for better readability */
+    color: #333;
+    margin-top: 20px;
+    text-align: center; /* Center call to action */
+}
+
+.highlight {
+    color: #003366;
+    font-weight: bold;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 954px) {
+    .newsbody{
+        margin-top: -2rem;
+    }
+    .news-container h1 {
+        font-size: 1.5rem; /* Adjusted for smaller screens */
+    }
+
+    .news-container h2 {
+        font-size: 1rem; /* Adjusted for smaller screens */
+    }
+
+    .news-container p {
+        font-size: 0.9rem; /* Adjusted for smaller screens */
+    }
+
+    .news-container ul {
+        font-size: 0.9rem; /* Adjusted for smaller screens */
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .news-container img {
+        max-width: 100%; /* Ensure images are responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}

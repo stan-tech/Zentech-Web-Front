@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zentech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For icons Browser -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href=".\images\WhatsApp Image 2024-12-06 at 10.46.50 PM.jpeg" type="image/x-icon">
+
+    <script src="./scripts/header_n_footer.js" defer></script>
+    <script src="./scripts/auto-translate.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar HTML -->
+      <div class="top-bar">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="./images/zentech-logo.svg" alt="Zentech Logo" style="height: 70px; top:50px;">
+        </div>
+        <!-- Search Bar -->
+        <div class="search-container">
+          <div class="search-bar" id="desktop-search-bar">
+            <span class="search-bar icon"></span>
+            <input placeholder="Search..." data-placeholder-key="placeholder-search" />
+          </div>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li class="dropdown" id="home">
+            <a class="dropbtn" href="#zentech" data-page="zentech"  data-key="home">Home</a>
+          
+          </li>
+          <li class="dropdown" >
+            <a class="dropbtn" href="#products" id="products" data-key="products" data-page="products">Products</a>
+            <div class="dropdown-content" id="product-categories">
+              <a href="products.html#1">Compressors</a><a href="products.html#2">Spare Parts</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="dropbtn" href="#solution"  data-key="solution" data-page="solution">Solutions</a>
+            <div class="dropdown-content" id="solution-categories">
+              <a href="#" style="display:none">Energy-Efficient Systems</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="dropbtn" href="#service&support" data-key="service&amp;support" data-page="service&support">Service &amp; Support</a>
+            <div class="dropdown-content" id="service-categories">
+              <a href="#" style="display:none">Maintenance Plans</a>
+              <a href="service&amp;support.html" data-key="technicaldoc">Technical Documentation</a>
+              <a href="#" style="display:none">Training Sessions</a>
+              <a href="#" style="display:none">Troubleshooting</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="dropbtn" href="#company-news" data-key="company" data-page="company-news">Company News</a>
+            <div class="dropdown-content" id="news-categories">
+              <a href="company-news.html?category=1">Latest anouncements</a><a href="company-news.html?category=2">Events &amp; exhibitions</a>
+              <a href="company-news.html?category=3">Product launches</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="dropbtn" href="#contact us" data-key="contact" data-page="contact us">Contact Us</a>
+            <div class="dropdown-content" id="contact-categories">
+              <a href="#" style="display:none">Customer Support</a>
+              <a href="#" style="display:none">Sales Inquiries</a>
+              <a href="#" style="display:none">Office Locations</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a class="dropbtn" href="#about us" data-key="about" data-page="about us">About Us</a>
+          </li>
+        </ul>
+        
+      <div class="action-buttons">
+          <button class="language">
+            <img src="./images/language.svg" style="margin-right: 2px;margin-bottom: 2px; height: 1rem; width: 1rem;">
+            <select id="language-selector">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+            </select>
+          </button>
+          <button href="#sign-in" class="sign-in"  data-key="signIn" data-page="sign-in">
+            Sign In
+          </button>
+        </div><div class="search-container" id="mobile-search-bar">
+          <div class="search-bar" id="mobile-search-bar">
+            <span class="search-bar icon"></span>
+            <input placeholder="Search..." data-placeholder-key="placeholder-search">
+          </div>
+        </div></nav>
+    </header>
+
+<div class="main-container" id="content">
+</div>
+
+<footer class="footer" id="main-footer">
+  <div class="footer-column">
+      <h4 data-key="product">Products</h4>
+      <ul id="footer-product-categories">
+          <li><a href="#" data-key="compressor">Compressors</a></li>
+         <!-- <li><a href="#">Accessories</a></li>
+          <li><a href="#">Custom Solutions</a></li>
+          <li><a href="#">Software Integration</a></li>-->
+      </ul>
+  </div>
+
+  <div class="footer-column">
+      <h4 data-key="solution">Solutions</h4>
+     <ul id="footer-solution-categories">
+          <li><a href="solution.html">Solution</a></li>
+      </ul>
+  </div>
+
+  <div class="footer-column">
+      <h4 data-key="service&support">Service & Support</h4>
+      <ul id="footer-service-categories">
+      <li><a href="#" data-key="technicaldoc">Technical Documentation</a></li>
+        <!--<li><a href="#">Maintenance Plans</a></li>
+          <li><a href="#">Technical Documentation</a></li>
+          <li><a href="#">Training Sessions</a></li>
+          <li><a href="#">Troubleshooting</a></li>-->
+      </ul>
+  </div>
+
+  <div class="footer-column">
+      <h4 data-key="company">Company News</h4>
+      <ul id="footer-news-categories">
+          <li><a href="#" data-key="Latest">Latest Announcements</a></li>
+      </ul>
+  </div>
+
+  <div class="footer-column">
+      <h4 data-key="contact">Contact Us</h4>
+      <ul>
+          <li><a href="contact-us.html" data-key="customer">Contact Us</a></li>
+      </ul>
+  </div>
+
+  <!-- Contact Information on the Right -->
+  <div class="footer-contact">
+    <p><img src="./images/watch.svg"/ style="margin-right: 10px; font-weight: bold;"><strong data-key="date">Monday to Friday 8:30-17:30</strong></p>
+    <p><img src="./images/phone.svg"/ style="margin-right: 6px; font-weight: bold;"> <strong data-key="tel">Business Consulting Telephone:</strong> <a href="tel:8607572280961">86-0757-2280961</a></p>
+    <p><img src="./images/mail.svg"/ style="margin-right: 10px; font-weight: bold;"> <strong>Email:</strong> <a href="mailto:gmccweling@chinagmcc.com">gmccweling@chinagmcc.com</a></p>
+      <p data-key="media">Official all-media account</p>
+              <div class="social-icons">
+                  <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="./images/icons/facebook.svg" style="margin-right: 2px;margin-bottom: 2px; height: 1rem; width: 1rem;">
+                  </a>
+                  <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                      <img src="./images/icons/linkedin.svg" style="margin-right: 2px;margin-bottom: 2px; height: 1rem; width: 1rem;">                        
+                  </a>
+              </div>
+  </div>
+</footer>
+<script type="module" src ="./scripts/common.js" defer></script>
+</body>
+
+</html>

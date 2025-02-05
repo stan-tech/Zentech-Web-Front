@@ -1,0 +1,63 @@
+
+    <link rel="stylesheet" href="./styles/sign-in.css">
+ 
+
+  
+    <div class="container">
+      <div class="sub-container">
+          <div class="zentech-moto">
+           <h1 style="text-align: center; font-size: 2rem;" data-key="signtitle">Why Zentech?</h1>
+            <img src="./images/zentech-logo-cropped.svg" id="zentech-sign-in-logo"/>
+            <p style="text-align: center;  font-size: 1.5rem;" data-key="signdesc">"With precision engineering, unmatched reliability, and a commitment to powering your success, we’re more than a compressor company, we’re your trusted partner in efficiency. Experience the Zen of performance"</p>
+           </div>
+
+           <div class="sign-in-body">
+           <img  class="use-icon" src="./images/user.svg" ></img>
+           <!-- Subtitle -->
+           <p data-key="icontitle">Welcome</p>
+           <div class="input-container" id="username-input">
+            <div class="form-group">
+             <input type="text" id="username" placeholder="username..." data-placeholder-key="placeholder-username" required>
+            </div>
+            </div>
+            <div class="input-container" id="pw-input">
+              <input type="password" style="color: #333;" id="password" placeholder="password..." data-placeholder-key="placeholder-password" required/>
+              <button type="button" class="password icon" id="toggle-password" style="color: #333;"></button>
+            </div>
+            <!-- Links for Forgot Password and Ask for Credentials -->
+            <div class="link-container">
+            <a href="#" id="ask-credentials" data-key="link1">Request Credentials</a>
+            <a href="#" id="forgot-pw" data-key="link2">Forgot Password?</a>
+            </div>
+            <button type="submit" class="sign-in-button" data-key="signbttn">Sign In</button>
+          </div>
+  </div>
+ </div>
+
+ <script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const togglePasswordButton = document.querySelector("#toggle-password");
+  const passwordInput = document.querySelector("#password");
+
+  // Vérifiez que les éléments existent avant d'ajouter des événements
+  if (togglePasswordButton && passwordInput) {
+    togglePasswordButton.addEventListener("click", () => {
+      // Alterner entre "password" et "text"
+      const currentType = passwordInput.getAttribute("type");
+      const newType = currentType === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", newType);
+
+      // Modifier l'icône dynamiquement
+      if (newType === "password") {
+        togglePasswordButton.style.backgroundImage = "url(./images/show-pw.svg)";
+      } else {
+        togglePasswordButton.style.backgroundImage = "url(./images/hide-pw.svg)";
+      }
+    });
+  } else {
+    console.error("Le bouton ou l'input n'a pas été trouvé !");
+  }
+});
+
+</script>
+     

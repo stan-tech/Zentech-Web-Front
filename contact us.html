@@ -1,0 +1,84 @@
+    <link rel="stylesheet" href="./styles/contact-us.css"/>
+    <div class="hero-section">
+    <h1 data-key="contact">Contact Us</h1>
+    </div>
+    <div class="container1">
+       <!--<div class="contact-channels">
+            <h5>Our Contact Channels</h5>
+
+            <div class="channel-row">
+                <div class="contact-channel">
+                    <i class="fas fa-cogs"></i>
+                    <h6>Technical Questions</h6>
+                    <p>Let us answer your technical questions.</p>
+                </div>
+                <div class="contact-channel">
+                    <i class="fas fa-briefcase"></i>
+                    <h6>Career</h6>
+                    <p>Explore our recent job openings.</p>
+                </div>
+                <div class="contact-channel">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h6>Distributors Near You</h6>
+                    <p>Purchase a legitimate Zentech product.</p>
+                </div>
+            </div>
+            <h7 style="font-size: 20px; font-weight: 300; margin-bottom: 15px;">Or find your answer through our FAQs (Frequently Asked Questions) </h7>
+            <div class="faqs-card">
+                <i class="fas fa-question-circle"></i>
+                <h6>FAQs</h6>
+                <p>Get to know our products & services.</p>
+            </div>
+        </div>-->
+              <!-- change dev with Form update by imad 25/12/2024 12:48 -->
+              <form  class="contact-form" onsubmit="submitContactForm(event)">
+                <div class="form-row" id="name-wrapper">
+                    <div class="input-wrapper">
+                        <input type="text" id="first-name" placeholder="First name ..." class="optional" data-placeholder-key="placeholder-first">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="last-name" placeholder="Last name ..." class="optional" data-placeholder-key="placeholder-last">
+                    </div>
+                </div>
+                <div class="input-wrapper required-field">
+                    <input type="email" id="email" placeholder="Email ..." >
+                </div>
+                <div class="input-wrapper required-field">
+                    <input type="tel" id="phone-number" placeholder="Phone number ..." data-placeholder-key="placeholder-phone">
+                </div>
+                <div class="form-row" id="select-wrapper">
+                    <div class="input-wrapper" id="country-wrapper">
+                        <select title="optional" class="optional" id="country" >
+                            <option data-key="country">Country</option>                         
+                        </select>
+                    </div>
+                    <div class="input-wrapper" id="role-wrapper">
+                        <select title="optional" class="optional" id="role">
+                            <option data-key="role">Role</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-wrapper required-field" id="topic-input">
+                    <input  id="topic" placeholder="Topic ..." >
+                </div>
+                <div class="input-wrapper required-field">
+                    <textarea id="message" placeholder="Write your message here ..." data-placeholder-key="placeholder-message"></textarea>
+                </div>
+                <button type="submit" data-key="send" id="submit-message">Send</button>
+                <p style="text-align: center;" data-key="contactdesc">Please know that a response takes 3 business days at maximum.</p>
+            </div>
+        </div>
+      </form>
+</div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const heroSection = document.querySelector('.hero-section');
+
+  // Ajoute la classe "show" pour activer l'effet d'apparition et la transparence
+  setTimeout(() => {
+    heroSection.classList.add('show');
+  }, 500); // Ajustez le délai (500ms) si nécessaire
+});
+
+   </script>

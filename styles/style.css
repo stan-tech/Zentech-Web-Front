@@ -1,0 +1,1092 @@
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+}
+
+body {
+  margin: 0;
+  font-family: OpenSans-Regular, sans-serif;
+  background-color: #d3f0ed;
+          
+}
+/*navbar***************************************************************************************/
+header {
+
+  width: 100%;
+  background-color: #438783;
+  padding: 10px;
+  padding-top: 1rem;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: fixed;
+  z-index: 1000;
+}
+
+.main-container {
+  padding-top: 8rem;
+width: 100%;
+overflow: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+  width: 97%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  overflow-y: visible;
+  margin-bottom: -4px;
+  margin-top: -1rem;
+}
+.logo{
+  padding: 0.5rem;
+  height: fit-content;
+  cursor: pointer;
+  margin-left: -30px;
+  align-self: flex-start;
+
+}
+
+.logo img {
+  width: 200px;
+  height: 150px; 
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+/* Hamburger Icon (Caché par défaut sur grands écrans) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Menu Navigation Normal (Grands écrans) */
+.nav-menu {
+  background-color: #4bc5bd;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+ margin-bottom: -0.7rem;
+ display: flex;
+ justify-content: center; 
+ align-items: center; 
+ width: 100%;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.3rem;
+  text-align: center;
+}
+
+/* Navbar Links */
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 10px 15px;
+  position: relative; /* Pour positionner la ligne */
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+  content: ""; /* Creates an invisible line */
+  position: absolute;
+  bottom: 0; /* Position the line under the link */
+  left: 0;
+  width: 0%; /* By default, the line is invisible */
+  height: 2px; /* Line thickness */
+  background-color: #ffffff; /* Line color */
+  transition: width 0.3s ease; /* Fluid width animation */
+}
+.nav-menu ul li a:hover::after,
+.nav-menu ul li a:focus::after  {
+  width: 100%; /* La ligne s'étend sous le lien */
+}
+
+
+
+.search-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+
+
+  }
+
+  .search-bar .icon{
+    background:url('../images/search-icon.svg') center no-repeat;
+    background-size: 0.9rem;
+    transform: translate(20%,50%);
+  }
+
+  .search-bar input{
+     font-size: 0.9rem;
+     border: none;
+     width: 88%;
+    background-color: transparent;
+     transform: translate(10%,-88%);
+     position: relative;
+     outline: none;
+      
+  }
+  .search-bar {
+    background-color: #CEF5F3;
+    border: none;
+    border-radius: 15px;
+    padding-bottom: 0.1rem;
+    width: 14rem;
+    height:2.2rem;
+    margin-right:9rem;
+    }
+
+
+    #desktop-search-bar{
+
+      display: block;
+    
+    }
+
+    #mobile-search-bar{
+      width:0%;
+      display: none;
+    }
+ 
+    
+  
+/* Button container for small screens */
+.mobile-only {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+  /* Bouton Language */
+.action-buttons .language {
+  display: flex; 
+  align-items: center; /* Vertical center alignment */
+  gap: 1px; /* Spacing between icon and select */
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: white;
+}
+
+/* Icon in the Language button */
+.action-buttons .language i {
+  font-size: 0.95rem;
+  margin-right: 1px; /* Small spacing with select */
+  line-height: 1; /* Avoids vertical offset */
+}
+
+/* Select in the Language button */
+.action-buttons .language select {
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  line-height: 1; 
+}
+.action-buttons .language select:hover
+ {
+background-color: #438783;
+color: white;
+border: 1px solid #438783;
+}
+/* Action Buttons */
+.action-buttons {
+  position: absolute;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.2rem;
+ 
+}
+.nav-menu ul li:hover .dropdown {
+  display: block; 
+  transition: all 0.3s ease;
+}
+
+.nav-menu ul li .dropdown {
+  display: none; 
+  
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fade-in 0.5s ease;
+}
+
+.dropdown .dropbtn {
+
+  margin-top: -0.38rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+
+.dropdown .dropbtn:hover{
+  background-color: transparent;
+
+}
+
+.dropdown-content {
+  display: none;
+  text-align: left;
+  position: absolute;
+  background-color: rgba(91, 180, 174, 0.95);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+  z-index: 1;
+  transition: all 0.3s ease;
+  border-radius: 0.4rem;
+}
+
+.dropdown a {
+  display: block; 
+
+}
+
+.dropdown a:hover {
+  background-color: #5bb4ae ; 
+  border-radius: 0.4rem;
+
+}
+
+.dropdown .dropdown-content a:hover::after,
+.dropdown .dropdown-content a.active::after {
+  width: 0%;
+}
+.action-buttons button {
+  margin-left: 1rem;
+  background-color: #cef5f39f;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 11px;
+  color: white;
+  align-items: center;
+   }
+  .action-buttons i {
+  font-size: 11px;
+  }
+  
+  .action-buttons button:hover {
+  background-color: #438783;
+  color: white;
+  border: 1px solid #438783;
+  }
+
+  .nav-menu .action-buttons .sign-in{
+    
+    min-width: auto; 
+    width: auto;
+    max-width: none;
+    padding-left: 0.5rem;
+    padding-right: 2rem;
+    flex-wrap: wrap;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0.9375rem; 
+    margin-left: 1rem;
+   
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    font-size: 15px;
+    background: url('../images/icons/person-white.svg') #bee2e0 no-repeat;
+    background-position: right 0.5rem center;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .sign-in-icon{
+    display: block;
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  .nav-menu .action-buttons .sign-in:hover{
+    background-color: #438783;
+  }
+
+
+
+/*move action-buttons bside the search bar*/
+@media (max-width:1565px) {
+
+  .search-container{
+    width: fit-content;
+  }
+  .search-bar {
+
+    margin-right: 18.1rem;
+    }
+  
+
+  .action-buttons {
+    flex-wrap: nowrap;
+    position: absolute;
+    right: 4rem;
+    bottom: 4.2rem;
+    display: flex;
+    align-items: center;
+    width:18rem;
+   
+  }
+
+
+}
+
+/*For logo resizing*/
+@media(max-width:1095px){
+  .logo{
+    margin-left: -50px;
+    align-self: flex-start;
+    height: 80%;
+    width: 180px;
+  }
+}
+
+
+@media (max-width:   59.5rem) {
+
+  .nav-menu.visible ul{
+    flex:1;
+  }
+  .hamburger {
+
+    display: flex;
+  }
+  .search-container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+#mobile-search-bar{
+  margin: 1rem auto;
+  display: block;
+  width: 12rem;
+}
+
+#desktop-search-bar{
+  display: none;
+}
+  .top-bar{
+    width:90%;
+  }
+     
+  .nav-menu {
+    opacity: 0;
+    animation: menu-slide-out 300ms ease; /* Increased animation duration to 300ms */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: rgba(91, 180, 174, 0.9);
+    z-index: 100;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .nav-menu.visible {
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Displays the menu when the visible class is added */
+    background-color: rgba(91, 180, 174, 0.9);
+    border: 1px solid #5bb4ae; 
+    opacity: 1;
+    animation: menu-slide-in 300ms ease; /* Increased animation duration to 300ms */
+
+  }
+
+  .nav-menu ul {
+    margin-top: 0.0625rem; /* 1px = 0.0625rem */
+    flex-direction: column;
+    gap: 1;
+  }
+
+  .nav-menu ul li {
+    position: relative;
+    overflow: visible;
+    border-bottom: 0.0625rem solid #ddd; /* 1px = 0.0625rem */
+  }
+  
+  .nav-menu ul li a {
+    color: white;
+    padding: 0.9375rem; /* 15px = 0.9375rem */
+    display: block;
+  }
+  
+
+ .dropdown:hover .dropdown-content a{
+    display: none; 
+  }
+
+  .dropdown{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    z-index: 200;
+  }
+
+.dropbtn{
+  text-align: center;
+  color: black;
+}
+.action-buttons {
+  align-content: center;
+  width: 100%;
+  height: 2rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  margin: 0 auto;
+
+}
+.nav-menu.visible li a{
+  text-align: left;
+  
+}
+  .dropdown .dropbtn{
+    text-align: center;
+  }
+ 
+  .nav-menu .action-buttons .sign-in{
+    flex: 0.2;
+    height: auto;
+    background-color: #438783;
+    color: white;
+    border: none;
+    border-radius: 0.9375rem; 
+    margin-top: 1rem;
+    margin-right: 6rem;
+    font-size: 14px;
+    padding-left: 0.8rem;
+    background-position: 92%;
+
+  }
+
+  .nav-menu .action-buttons .language{
+    flex: 1;
+    width: 50%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: OpenSans-Regular;
+    background-color: #438783;
+    color: white;
+    border: none;
+    border-radius: 0.9375rem; 
+    margin-left: 6rem;
+    max-width: 12rem;
+
+
+  }
+  .nav-menu .action-buttons #mobile-language{
+    display: block;
+    margin-top: 20.8rem;
+    width: 16rem;
+    height: 1.8rem;
+    font-size: 0.4rem;
+  }
+
+
+}
+@keyframes menu-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Final position */
+  }
+}
+
+@keyframes menu-slide-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0); /* Start at final position */
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%); /* End off-screen to the right */
+  }
+}
+
+
+
+
+
+/*home zentech page ************************************************************/
+
+/* Slider Container */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;  
+  padding-right: 2rem;
+  width: 100%;
+  position: relative;
+  background-color: #d3f0ed;
+  height: 37rem; /* Hauteur réduite */
+  margin: 0 auto;
+}
+
+.slides-wrapper{
+  height: 42rem;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 99%;
+}
+.slides {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* Snap to slides when scrolling */
+  scrollbar-width: none;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  transition: transform 0.5s ease-in-out;
+  height: 100%; 
+  width: 100%;
+  
+}
+
+.slides::-webkit-scrollbar {
+  width: 0;
+  background: transparent; 
+}
+
+.slide-container{
+  cursor: pointer;
+  min-width: 40rem;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+ position: relative;
+ transform: scale(1); 
+ transition: transform 0.3s ease-in-out;
+}
+.slide-container:hover{
+  transform: scale(1.005);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Individual Slide */
+.slide {
+  flex: 0 0 70%;
+  min-width: calc(100% / 1.3); /* Show part of the previous/next slides */
+  box-sizing: border-box;
+  position: relative;
+  opacity: 0.5; /* Transparency for non-active customers */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: scale(0.9); /* Minimize non-active slides */
+  height: 100%; 
+  width: 100%;
+}
+
+.slide img {
+  display: block; /* Removes extra space below inline images */
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; /* Maintain proportions and cover completely */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Active Slide */
+.slide.active {
+  opacity: 1;
+  transform: scale(1); /* Normal for the active slide */
+}
+
+.dots-wrapper{
+  position: relative;
+  overflow: hidden; 
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 1rem;
+  padding-bottom: 1rem;
+
+}
+.dots-container:not(.dots-container.products) {
+  position: relative;
+  height: auto;
+  display: flex;
+  gap: 10px; 
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+
+}
+
+.dot:not(.dot.products) {
+
+  width: 2rem; /* Largeur des dots (rectangles) */
+  height: 0.5rem; /* Hauteur réduite pour donner un effet de ligne */
+  background-color: #333;
+  border-radius: 10px; 
+  transition: all 0.3s ease; /* Animation fluide */
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+}
+
+/* Dot actif */
+.dot.active:not(.dot.active.products){
+  background-color: #438783; /* Couleur active */
+  width: 6rem; /* Dot actif plus large */
+  height: 0.5rem; /* Légèrement plus haut */
+}
+
+/* Description container (overlay on the slide) */
+/* Description container */
+.description-container {
+  transform: translateY(20%);
+  height: 25%;
+  position: absolute;
+  bottom: 0; /* Stick to the bottom of the slide */
+  width: 100%; /* Full width of the slide */
+  opacity: 0; /* Initially hidden */
+  backdrop-filter: blur(10px); /* Adds a blur effect */
+  background: rgba(61, 58, 58, 0.3); /* Light transparent background */
+  color: #000; /* Dark text for contrast */
+  font-size: 1rem;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth ascend */
+  z-index: 2;
+  margin: 0; /* Ensure no margin */
+  padding: 0; /* Remove padding */
+  box-sizing: border-box; /* Ensure padding does not add extra height */
+}
+
+.description-text {
+  user-select: none;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center; /* Center align text */
+  margin: 0; /* Remove any default margins */
+  color: white;
+  font-size: 20px;
+  height: 100%; /* Adjust based on content */
+}
+
+/* When the slide is hovered or active, show the description */
+.slide:hover .description-container,
+.slide.active .description-container {
+  transform: translateY(0%);
+  opacity: 1; /* Make visible */
+}
+
+
+/* Learn More Button */
+/*.learn-more {
+  position:absolute;
+  bottom: 20px;
+  left: 90px;
+  height: 40px;
+  width: 140px;
+  transform: translateX(-50%);
+  background-color: #438783;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: #305d5b;
+}*/
+/*pesponsive slider home *************************************************************************************************/
+@media (max-width: 948px) {
+  .slider-container {
+    height: auto;
+    align-items: stretch;
+    margin: 0; /* Remove any default margin */
+    padding: 0;
+      padding-right: 1rem; /* Adjust padding to fit on mobile */
+  }
+
+  .slides-wrapper {
+      height: auto; /* Allow auto height for the container */
+  }
+
+  .slides {
+    height: 50%; /* Set a specific height */
+    padding: 0.5rem 0; /* Adjust padding to give some space in slider */
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    justify-content: space-around;
+    scroll-snap-type: x mandatory; /* Enable snapping effect */
+    display: flex; /* Use flexbox layout */
+    flex-direction: row; /* Arrange slides in a row */
+    flex-wrap: nowrap; /* Ensure slides stay in a single row */
+    gap: 1rem; /* Space between slides */
+}
+
+  .slide-container {
+      flex: 0 0 auto; /* Ensure the size fits content */
+      min-width: 70%; /* Adjust to take a larger width on mobile */
+      max-width: 100%; /* Ensure it does not exceed the viewport */
+      height: auto; /* Allow the height to adjust based on the image */
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+
+  }
+
+  .slide {
+      flex: 0 0 auto; /* Slide sizing, prevents stretching */
+      width: 100%; /* Each slide takes the full view */
+      height: 100%; /* Maintain aspect ratio */
+      box-sizing: border-box; /* Include padding/borders in width */
+      opacity: 0.5; /* Sliders not in view should be slightly transparent */
+      transition: opacity 0.5s, transform 0.5s; /* Smooth transitions */
+      scroll-snap-align: center; /* Center alignment for slide */
+  }
+
+  .slide.active {
+      opacity: 1; /* Fully visible for the current slide */
+      transform: scale(1); /* Normal size */
+  }
+
+  .slide img {
+      width: 100%; /* Ensure images take full width of their container */
+      height: 100%; /* Maintain aspect ratio */
+      object-fit: cover; /* Maintain perfect fit within slide */
+  }
+
+  .dots-wrapper {
+      display: flex;
+      justify-content: center; /* Center align dots navigation */
+      align-items: center;
+      padding-bottom: 1rem; /* Space below the dots */
+  }
+
+  .dot {
+      width: 0.625rem; /* Standard dot size */
+      height: 0.625rem; /* Standard height */
+      background-color: #333; /* Default color */
+      border-radius: 50%; /* Round dots */
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+      margin: 0 0.25rem; /* Space between dots */
+  }
+
+  .dot.active {
+      width: 1.5rem; /* Increase size for active dot */
+      background-color: #438783; /* Highlight active dot */
+  }
+  .description-container{
+    padding-bottom: 1.5rem;
+    height: auto;
+  }
+  .description-text {
+    font-size: 0.8rem; /* Smaller text for descriptions */
+    padding-bottom: 1.5rem; /* Less padding */
+}
+}
+
+/* For extra small devices */
+@media (max-width: 480px) {
+  .slides {
+      padding: 0; /* Remove extra padding */
+      gap: 0.25rem; /* Smaller gap */
+  }
+
+  .slide-container {
+      min-width: 90%; /* Allow more width for slides */
+  }
+
+  .slide {
+      opacity: 0.5; /* Maintain transparency for inactive slides */
+  }
+
+  .description-container {
+      font-size: 0.8rem; /* Smaller text for descriptions */
+      padding: 0.25rem; /* Less padding */
+  }
+
+  .dot {
+      width: 0.5rem; /* Smaller dots */
+      height: 0.5rem; /* Smaller height */
+  }
+
+  .dot.active {
+      width: 1rem; /* Increase width of active dot */
+  }
+}
+
+
+
+/*footer********************************************************************************/
+.footer {
+  border-top: #3333331f 1px solid;
+  background-color: #d3f0ed; /* Light green background */
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.footer-column {
+  flex: 1;
+  min-width: 50px;
+  margin: 10px 20px 10px 0;
+  font-size: 14px; /* Reduced font size */
+}
+.footer-column h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 14px;
+}
+.footer-column ul {
+  list-style-type: disc; /* Add bullet points */
+  padding-left: 10px;
+}
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 12px; /* Ensure links match the reduced size */
+}
+.footer-column ul li a:hover {
+  text-decoration: underline;
+  color: #2AAA39;
+}
+.footer-contact {
+  margin-top: 20px;
+  text-align: left;
+  flex-basis: 300px; /* Reserve space for the contact */
+  margin-left: auto;
+  font-size: 14px; /* Match the reduced font size */
+}
+.footer-contact p {
+  margin: 10px 0;
+  color: #333;
+}
+.footer-contact a {
+  text-decoration: none;
+  color: #555;
+}
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+.social-icons a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 20px; /* Adjust size of icons */
+  color: #333;
+}
+.social-icons a:hover {
+  color: #2AAA39; /* Hover color for icons */
+}
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+@keyframes fade-in{
+
+  0%{
+    height: 0%;
+    z-index: -10;
+    opacity: 0;
+
+  }
+
+  100%{
+    height: fit-content;
+    z-index: 10;
+    opacity: 1;
+  }
+}
+
+/* Loading animation*/
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.loading-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loading-dot {
+  z-index: 10;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.loading-animation .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-animation .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+      transform: scale(0);
+  }
+  40% {
+      transform: scale(1);
+  }
+}
+
+.loading-text {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+}
+/* Loading animation*/
+
+
+
+/*footer responsive********************************************************************/
+@media (max-width: 48rem) { /* Pour les écrans de 768px ou moins */
+  .footer {
+    flex-direction: row; /* Maintient la disposition horizontale */
+    flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne si nécessaire */
+    justify-content: center; /* Centre les colonnes horizontalement */
+    align-items: flex-start; /* Alignement vertical au début */
+    padding: 1rem; /* Réduit le padding global */
+  }
+
+  .footer-column {
+    flex: 1 1 calc(33.33% - 1rem); /* Chaque colonne occupe un tiers avec un espacement */
+    max-width: calc(33.33% - 1rem); /* Limite la largeur pour rester aligné */
+    margin: 0.5rem; /* Espacement entre les colonnes */
+    font-size: 0.875rem; /* Réduction de la taille de texte */
+  }
+
+  .footer-column h4 {
+    font-size: 1rem; /* Taille légèrement réduite pour les titres */
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-column ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 0.375rem; /* Réduit l'espacement vertical */
+  }
+
+  .footer-column ul li a {
+    font-size: 0.875rem; /* Texte légèrement plus petit */
+    color: #555;
+  }
+
+  .footer-column ul li a:hover {
+    color: #2AAA39;
+  }
+
+  .footer-contact {
+    flex: 1 1 100%; /* Prend toute la largeur en bas */
+    margin-top: 1rem;
+    text-align: center; 
+    font-size: 0.875rem;
+  }
+
+  .social-icons {
+    width: 100%;
+    height: 10rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center; 
+    gap: 0.625rem; 
+  }
+
+  .social-icons a {
+    font-size: 1.25rem; 
+  }
+}
+
+
